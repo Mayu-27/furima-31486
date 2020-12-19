@@ -28,10 +28,10 @@
 | genre_id              | integer | null: false |
 | item_condition_id     | integer | null: false |  
 | shipping_fee_id       | integer | null: false |
-| shipping_from_id      | integer | null: false |
-| shipping-period_id    | integer | null: false |
+| prefecture_id         | integer | null: false |
+| shipping_period_id    | integer | null: false |
 | price                 | integer | null: false |
-| user                  | integer | null: false, foreign_key: true | 
+| user                  | references | null: false, foreign_key: true | 
 
 ### Association
 - has_one :purchase
@@ -47,12 +47,12 @@
 
 | Column                | Type    | Options     |
 | --------------------- | ------- | ----------- |
-| user_id               | integer | null: false, foreign_key: true |
-| item_id               | integer | null: false, foreign_key: true |
+| user                  | references | null: false, foreign_key: true |
+| item                  | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :item
-- belongs-to :user
+- belongs_to :user
 - has_one :shipping_address
 
 
