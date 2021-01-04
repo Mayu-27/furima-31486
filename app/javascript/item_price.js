@@ -1,14 +1,13 @@
 
+window.addEventListener("load", () => {
+const priceInput = document.getElementById("item-price");
+   priceInput.addEventListener("input", () => {
+      const inputValue = Math.floor(priceInput.value);
+      const inputCommission = Math.floor(inputValue * 0.1)
+      const inputProfit = Math.floor(inputValue - inputCommission)
+      add_tax_price.innerHTML = inputCommission
+      profit.innerHTML = inputProfit
+   });
+});
 
-//const priceInput = document.getElementById("item-price")
-//const commission = riceInput * 0.1
-//const profit = priceInput - commission
-//priceInput.innerHTML = commission
-//priceInput.innerHTML = profit
-
-
-//const priceInput = document.getElementById("item-price");
-//priceInput.addEventListener("input", () => {
-   //console.log("イベント発火");
-//});
 
