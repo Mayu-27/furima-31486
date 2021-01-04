@@ -15,7 +15,7 @@ class Item < ApplicationRecord
     validates :introduction
   end
 
-  with_options presence: true, numericality: { other_than: 0 } do
+  with_options presence: true, numericality: { other_than: 1 } do
     validates :genre_id
     validates :item_condition_id
     validates :shipping_fee_id
