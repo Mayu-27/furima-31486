@@ -9,5 +9,9 @@ FactoryBot.define do
     shipping_period_id  { '2' }
     price               { '1000' }
     user_id             { FactoryBot.create(:user).id }
+
+    after(:build) do |item|
+      item.image.attach(io: File.open('public/images/image.png'), filename: 'image.png' )
+    end
   end
 end
