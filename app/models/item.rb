@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to :item_condition
   belongs_to :shipping_fee
   belongs_to :shipping_period
-  belongs_to :prefecture
+  belongs_to :prefecture    
 
   has_one_attached :image
 
