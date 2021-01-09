@@ -1,6 +1,7 @@
 <%# cssは商品出品のものを併用しています。
 app/assets/stylesheets/items/new.css %>
 
+<% if user_signed_in? && current_user.id == @item.user.id %>
 <div class="items-sell-contents">
   <header class="items-sell-header">
     <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
@@ -10,7 +11,7 @@ app/assets/stylesheets/items/new.css %>
     <%= form_with model: @item, local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: @item %>
+    <%= render 'shared/error_messages', model: @item %>
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
     <%# 出品画像 %>
@@ -159,3 +160,4 @@ app/assets/stylesheets/items/new.css %>
     </p>
   </footer>
 </div>
+<% end %>
