@@ -18,7 +18,7 @@ class Order
   end
 
   def save
-    order = Order.create(card_number: card_number, card_exp_month: card_exp_month, card_exp_year: card_exp_year, card_cvc: card_cvc, user_id: user_id)
+    @order = Order.create(card_number: card_number, card_exp_month: card_exp_month, card_exp_year: card_exp_year, card_cvc: card_cvc, user_id: user_id)
     ShippingAddresses.create(postal_code: postal_code, prefecture: prefecture, city: city, building: building, user_id: user.id)
   end
 end
