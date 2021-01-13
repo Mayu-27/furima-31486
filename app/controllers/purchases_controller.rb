@@ -5,10 +5,11 @@ class PurchasesController < ApplicationController
 
   def create
     @order = Order.new(set_params)
-    if @order.save
+    if @order.valid?
+      @order.save
       redirect_to root_path
     else 
-    　render :index
+      render :index
     end
   end
 
