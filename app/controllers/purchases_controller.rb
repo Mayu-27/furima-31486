@@ -20,3 +20,4 @@ class PurchasesController < ApplicationController
 end
 
 
+ 
