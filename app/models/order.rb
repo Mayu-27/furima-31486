@@ -4,10 +4,6 @@ class Order
   attr_accessor :postal_code, :prefecture_id, :city, :street_number, :building_name, :phone_number, :user_id, :item_id, :token
 
   with_options presence: true do
-    # validates :card_number, numericality: {only_integer: true}
-    # validates :card_exp_month, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 12}
-    # validates :card_exp_year, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 99}
-    # validates :card_cvc, numericality: {only_integer: true, length: {maximum: 4}}
     validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
     validates :prefecture_id, numericality: { other_than: 1 }
     validates :city
