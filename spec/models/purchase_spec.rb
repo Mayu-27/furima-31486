@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Purchase, type: :model do
   before do
     @purchase = FactoryBot.build(:purchase)
+    @order = FactoryBot.build(:order)
   end
 
   describe '商品購入機能' do
@@ -22,6 +23,11 @@ RSpec.describe Purchase, type: :model do
         @purchase.item_id = nil
         @purchase.valid?
         expect(@purchase.errors.full_messages).to include("Item must exist")
+      end
+      it 'tokenが空では登録できない' do
+        @order.token = nil
+        @order.valid?
+        expect(@order.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
