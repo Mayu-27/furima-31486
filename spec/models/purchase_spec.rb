@@ -15,14 +15,14 @@ RSpec.describe Purchase, type: :model do
 
     context '購入できないとき' do
       it 'user_idが空では登録できない' do
-        @purchase.user_id = nil 
+        @purchase.user_id = nil
         @purchase.valid?
-        expect(@purchase.errors.full_messages).to include("User must exist")
+        expect(@purchase.errors.full_messages).to include('User must exist')
       end
       it 'item_idが空では登録できない' do
         @purchase.item_id = nil
         @purchase.valid?
-        expect(@purchase.errors.full_messages).to include("Item must exist")
+        expect(@purchase.errors.full_messages).to include('Item must exist')
       end
       it 'tokenが空では登録できない' do
         @order.token = nil
@@ -32,5 +32,3 @@ RSpec.describe Purchase, type: :model do
     end
   end
 end
-
-
