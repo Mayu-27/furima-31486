@@ -17,17 +17,17 @@ RSpec.describe Purchase, type: :model do
       it 'user_idが空では登録できない' do
         @purchase.user_id = nil
         @purchase.valid?
-        expect(@purchase.errors.full_messages).to include('Userを入力してください')
+        expect(@purchase.errors.full_messages).to include('User must exist')
       end
       it 'item_idが空では登録できない' do
         @purchase.item_id = nil
         @purchase.valid?
-        expect(@purchase.errors.full_messages).to include('Itemを入力してください')
+        expect(@purchase.errors.full_messages).to include('Item must exist')
       end
       it 'tokenが空では登録できない' do
         @order.token = nil
         @order.valid?
-        expect(@order.errors.full_messages).to include("Tokenを入力してください")
+        expect(@order.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
