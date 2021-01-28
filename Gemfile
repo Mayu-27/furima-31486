@@ -68,4 +68,4 @@ gem 'payjp'
 =======
 gem "aws-sdk-s3", require: false
 gem 'rails-i18n'
->>>>>>> parent of 805c539... Revert "エラーメッセージの日本語表示"
+
