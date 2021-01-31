@@ -10,20 +10,9 @@ class Item < ApplicationRecord
   has_one :purchase
 
   has_one_attached :image
+  has_one :purchase
 
-  with_options presence: true do
-    validates :name
-    validates :introduction
-    validates :image
-  end
+  has_many :item_tag_relations
+  has_many :tags, through: :item_tag_relations
 
-  with_options presence: true, numericality: { other_than: 1 } do
-    validates :genre_id
-    validates :item_condition_id
-    validates :shipping_fee_id
-    validates :shipping_period_id
-    validates :prefecture_id
-  end
-
-  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
 end

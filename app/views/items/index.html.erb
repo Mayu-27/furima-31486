@@ -120,10 +120,9 @@
       <% if @items.present? %>
         <% @items.each do |item| %>
           <li class='list'>
-            <%= link_to item_path(item)  do %>
+            <%= link_to item_path(item) do %>
             <div class='item-img-content'>
-              <%= image_tag item.image, class: "item-img" %>
-
+              <%#= image_tag item.image, class: "item-img" %>
               <% if item.purchase.present? %> 
                 <div class='sold-out'>
                   <span>Sold Out!!</span>
@@ -142,9 +141,16 @@
                   <span class='star-count'>0</span>
                 </div>
               </div>
+              <ul class="tag">
+                <li class="tag-list">
+                <% item.tags.each do |tag| %>
+                  #<%=tag.tag_name%>
+                <%end%>
+                </li>
+              </ul>
             </div>
             <% end %>
-          </li>
+          </li> 
         <% end %>
       
       <% else  %>
