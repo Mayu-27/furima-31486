@@ -22,7 +22,7 @@ class ItemsTag
 
 
   def save
-    item = Item.create(name: name, introduction: introduction, genre_id: genre_id, item_condition_id: item_condition_id, shipping_fee_id: shipping_fee_id, shipping_period_id: shipping_period_id, prefecture_id: prefecture_id, price: price, user_id: user_id)
+    item = Item.create(image: image, name: name, introduction: introduction, genre_id: genre_id, item_condition_id: item_condition_id, shipping_fee_id: shipping_fee_id, shipping_period_id: shipping_period_id, prefecture_id: prefecture_id, price: price, user_id: user_id)
     tag = Tag.where(tag_name: tag_name).first_or_initialize
     tag.save
 
